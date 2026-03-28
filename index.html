@@ -119,6 +119,7 @@
             background-color: rgba(53, 53, 52, 0.8);
         }
     </style>
+    <link href="chatbot.css" rel="stylesheet"/>
 </head>
 <body class="font-body antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
 <!-- Top Navigation (Shared Component Integration - Glassmorphism applied) -->
@@ -310,4 +311,39 @@
 </div>
 </div>
 </footer>
+    <!-- Chatbot Launcher Button -->
+    <button id="chat-launcher" aria-label="Open Chat">
+        <span class="material-symbols-outlined">forum</span>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-container" class="glass-panel">
+        <div class="chat-header">
+            <div class="chat-title-wrapper">
+                <span class="chat-title">Trợ lý CMF</span>
+                <span class="status-dot"></span>
+            </div>
+            <div class="chat-actions">
+                <button id="chat-refresh-btn" class="chat-action-btn" title="Làm mới">
+                    <span id="refresh-icon" class="material-symbols-outlined">refresh</span>
+                </button>
+                <button id="chat-close-btn" class="chat-action-btn" title="Đóng">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+        </div>
+        <div id="chat-messages" class="chat-messages">
+            <!-- Messages will be injected here -->
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Nhập tin nhắn..." autocomplete="off">
+            <button id="chat-send-btn" class="chat-send-btn">
+                <span class="material-symbols-outlined">send</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="chatbot.js"></script>
 </body></html>
